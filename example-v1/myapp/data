@@ -1,0 +1,8 @@
+CREATE DATABASE myapp;
+USE myapp;
+
+CREATE TABLE data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    key_name VARCHAR(255) NOT NULL,
+    value TEXT
+);
