@@ -4,9 +4,9 @@ import redis
 
 # MySQL数据库连接配置
 mysql_config = {
-    'host': 'localhost',
-    'user': 'your_mysql_user',
-    'password': 'your_mysql_password',
+    'host': '192.168.212.22',
+    'user': 'dev',
+    'password': 'dev@123',
     'db': 'myapp',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
@@ -14,9 +14,11 @@ mysql_config = {
 
 # Redis连接配置
 redis_config = {
-    'host': 'localhost',
+    'host': '192.168.212.205',
     'port': 6379,
-    'db': 0
+    'db': 0,
+    'ssl': False,
+    'health_check_interval': 30
 }
 
 def store_data_in_mysql(key, value):
@@ -54,6 +56,6 @@ def get_data(key):
 
 if __name__ == '__main__':
     # 示例用法
-    store_data_in_mysql('example_key', 'example_value')
-    data = get_data('example_key')
+    store_data_in_mysql('test', 'woshishui')
+    data = get_data('test')
     print(data)
